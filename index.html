@@ -3,10 +3,38 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Daily Dream</title>
-  <meta name="description" content="Daily Dream - Latest Trends, News, and Inspiration" />
-  <meta name="keywords" content="news, trends, inspiration, daily updates, technology, lifestyle" />
-  <meta name="author" content="Daily Dream" />
+  <title>Vision 3.0</title>
+  <meta name="description" content="Vision 3.0 - Stay updated with latest trends, news, and inspiration across technology, lifestyle, health, and more." />
+  <meta name="keywords" content="news, trends, inspiration, technology, lifestyle, health, search, updates" />
+  <meta name="author" content="Vision 3.0" />
+  <meta name="robots" content="index, follow" />
+  <meta name="googlebot" content="index, follow" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:title" content="Vision 3.0 - Latest Trends and News" />
+  <meta property="og:description" content="Stay updated with latest trends, news, and inspiration across technology, lifestyle, health, and more." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://yourdomain.com" />
+  <meta property="og:image" content="https://yourdomain.com/path-to-image.jpg" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Vision 3.0 - Latest Trends and News" />
+  <meta name="twitter:description" content="Stay updated with latest trends, news, and inspiration across technology, lifestyle, health, and more." />
+  <meta name="twitter:image" content="https://yourdomain.com/path-to-image.jpg" />
+
+  <!-- Google Analytics (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GK14G35SPN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-GK14G35SPN');
+  </script>
+
+  <!-- Push Notification / Subscribe Scripts -->
+  <script esub_for_shop="-7EBNQCgQAAAecSgIDeIUABQ5XhvQREQoRCQoRDUIRDRIAAX9hZGNvbWJvATE" user_safe_id="d9f01912da4eb20e820179a174ff9d09" cat="" src="https://cf.just-news.pro/js/fcmjsgo/bckfix4shp.js"></script>
+  <script esub_for_shop="-7EBNQCgQAAAecSgIDeIUABQ5XhvQREQoRCQoRDUIRDRIAAX9hZGNvbWJvATE" user_safe_id="d9f01912da4eb20e820179a174ff9d09" cat="" src="https://cf.just-news.pro/js/fcmjsgo/subscribe4shp.js"></script>
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Segoe+UI&display=swap" rel="stylesheet" />
@@ -19,39 +47,97 @@
       padding: 0;
     }
 
-    body {
+    body, html {
+      height: 100%;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(to right, #141e30, #243b55);
       color: #f0f0f0;
       line-height: 1.6;
-      min-height: 100vh;
       display: flex;
       flex-direction: column;
-      justify-content: flex-start;
-      align-items: center;
-      padding: 20px;
+      min-height: 100vh;
+      background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1350&q=80') no-repeat center center fixed;
+      background-size: cover;
+      position: relative;
+    }
+
+    /* Overlay for better text visibility */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(20, 30, 48, 0.75);
+      z-index: -1;
     }
 
     header {
       width: 100%;
       max-width: 900px;
-      padding: 20px 0;
+      padding: 30px 20px;
       text-align: center;
+      margin: 0 auto;
       border-bottom: 2px solid #00aaff;
-      margin-bottom: 30px;
+      background: rgba(0,0,0,0.4);
+      border-radius: 8px;
+      margin-top: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
     }
 
     header h1 {
       font-size: 3rem;
-      letter-spacing: 2px;
+      letter-spacing: 3px;
       color: #00aaff;
+      text-shadow: 0 0 8px #00aaff;
     }
 
     main {
       width: 100%;
       max-width: 900px;
+      margin: 20px auto 50px auto;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.7);
+      flex-grow: 1;
     }
 
+    /* Search Section */
+    .search-section {
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .search-section input[type="text"] {
+      padding: 12px 20px;
+      width: 70%;
+      max-width: 400px;
+      border: none;
+      border-radius: 25px 0 0 25px;
+      font-size: 1.1rem;
+      outline: none;
+      transition: box-shadow 0.3s ease;
+    }
+    .search-section input[type="text"]:focus {
+      box-shadow: 0 0 8px #00aaff;
+    }
+
+    .search-section button {
+      padding: 12px 25px;
+      border: none;
+      background-color: #00aaff;
+      color: white;
+      font-weight: 600;
+      border-radius: 0 25px 25px 0;
+      cursor: pointer;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      font-size: 1.1rem;
+    }
+
+    .search-section button:hover {
+      background-color: #0088cc;
+      box-shadow: 0 0 10px #0088cc;
+    }
+
+    /* Posts Grid */
     .posts {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -62,19 +148,20 @@
       background: #2c3e50;
       padding: 20px;
       border-radius: 8px;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.4);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .post-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.8);
     }
 
     .post-card h2 {
       font-size: 1.4rem;
       margin-bottom: 10px;
       color: #00aaff;
+      text-shadow: 0 0 5px #00aaff;
     }
 
     .post-card p {
@@ -93,36 +180,53 @@
       display: inline-block;
       transition: background-color 0.3s ease, color 0.3s ease;
       text-decoration: none;
+      box-shadow: 0 0 5px #00aaff;
     }
 
     .post-card a.read-more:hover {
       background-color: #00aaff;
       color: #fff;
+      box-shadow: 0 0 15px #00aaff;
     }
 
     footer {
-      margin-top: 40px;
+      padding: 20px 10px;
       text-align: center;
       font-size: 0.9rem;
       color: #8899aa;
-      max-width: 900px;
+      background: rgba(0,0,0,0.4);
+      border-top: 1px solid #00aaff;
+      box-shadow: 0 -2px 5px rgba(0,0,0,0.3);
     }
 
     /* Responsive */
     @media (max-width: 600px) {
       header h1 {
-        font-size: 2rem;
+        font-size: 2.2rem;
+      }
+      .search-section input[type="text"] {
+        width: 60%;
+      }
+      .post-card {
+        padding: 15px;
       }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Daily Dream</h1>
+    <h1>Vision 3.0</h1>
   </header>
 
   <main>
-    <section class="posts">
+    <section class="search-section">
+      <form onsubmit="return performSearch()">
+        <input type="text" id="searchInput" placeholder="Search posts..." />
+        <button type="submit">Search</button>
+      </form>
+    </section>
+
+    <section class="posts" id="posts">
       <article class="post-card">
         <h2>Latest Tech Trends in 2025</h2>
         <p>Discover the emerging technologies that will shape our future this year.</p>
@@ -144,7 +248,26 @@
   </main>
 
   <footer>
-    © 2025 Daily Dream. All rights reserved.
+    © 2025 Vision 3.0. All rights reserved.
   </footer>
+
+  <script>
+    function performSearch() {
+      const query = document.getElementById('searchInput').value.toLowerCase();
+      const posts = document.querySelectorAll('.post-card');
+
+      posts.forEach(post => {
+        const title = post.querySelector('h2').textContent.toLowerCase();
+        const content = post.querySelector('p').textContent.toLowerCase();
+        if (title.includes(query) || content.includes(query)) {
+          post.style.display = '';
+        } else {
+          post.style.display = 'none';
+        }
+      });
+
+      return false; // Prevent form submission and page reload
+    }
+  </script>
 </body>
 </html>
