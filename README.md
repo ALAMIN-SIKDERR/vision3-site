@@ -3,7 +3,7 @@ https://vision3.eu.org
 # Vision 3.0
 
 ![Vision 3.0](https://vision3.eu.org/path-to-image.jpg)
-
+google-site-verification=bylK4ePdNr0Ys1_7JHY3OsTKnNiJtLmgmtoGyMChXpo
 **Vision 3.0** is a modern, responsive, and visually appealing single-page website template designed for blogs, news portals, and personal websites. It features a beautiful full-screen background image, integrated search functionality, SEO optimization, Google Analytics tracking, and push notification support.
 
 ---
