@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Vision 3.0 — Home</title>
+  <meta name="description" content="Vision 3.0 - Latest posts" />
+  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI&display=swap" rel="stylesheet" />
+  <style>
+    body{font-family:'Segoe UI',sans-serif;background:#0f1724;color:#e6eef8;padding:20px}
+    header{max-width:1000px;margin:10px auto;text-align:center}
+    .container{max-width:1000px;margin:10px auto}
+    .posts{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+    .card{background:#12202b;padding:18px;border-radius:8px;box-shadow:0 6px 18px rgba(0,0,0,0.6)}
+    .card h3{color:#4fd0ff;margin:0 0 8px}
+    .card p{color:#cdd9e6}
+    .meta{font-size:12px;color:#9fb4c9;margin-top:8px}
+    .topbar{display:flex;gap:10px;align-items:center;justify-content:space-between}
+    a.btn{background:#00aaff;color:#002233;padding:8px 12px;border-radius:6px;text-decoration:none;font-weight:600}
+    #status{margin:10px 0;color:#ffd;}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Vision 3.0</h1>
+    <div class="topbar">
+      <div>Latest posts from Firebase</div>
+      <div><a class="btn" href="admin.html" target="_blank">Admin Panel</a></div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div id="status">Loading posts...</div>
+    <section class="posts" id="posts"></section>
+  </div>
+
+  <!-- Firebase compat SDKs (simple for beginners) -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+
+  <script>
+    // ====== REPLACE WITH YOUR FIREBASE CONFIG ======
+    const firebaseConfig = {
+      apiKey: "YOUR_API_KEY",
+      authDomain: "YOUR_PROJECT.firebaseapp.com",
+      projectId: "YOUR_PROJECT_ID",
+      // ... other config values
+    };
+    // ==============================================
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+
+    const postsEl = document.getElementById('posts');
+    const statusEl = document.getElementById('status');
+
+    // fetch posts ordered by createdAt desc
+    db.collection('posts').orderBy('createdAt', 'desc').get()
+      .then(snap => {
+        if (snap.empty) {
+          statusEl.textContent = 'No posts yet.';
+          return;
+        }
+        statusEl.textContent = '';
+        snap.forEach(doc => {
+          const data = doc.data();
+          const card = document.createElement('article');
+          card.className = 'card';
+          card.innerHTML = `
+            <h3>${escapeHtml(data.title||'Untitled')}</h3>
+            <p>${escapeHtml(data.excerpt || (data.content||'').slice(0,160) + '...')}</p>
+            <div class="meta">Posted: ${new Date(data.createdAt?.toMillis ? data.createdAt.toMillis() : data.createdAt).toLocaleString()}</div>
+            ${data.imageUrl ? `<div style="margin-top:8px"><img src="${escapeAttr(data.imageUrl)}" style="width:100%;border-radius:6px;max-height:220px;object-fit:cover"></div>` : ''}
+          `;
+          postsEl.appendChild(card);
+        });
+      })
+      .catch(err => {
+        statusEl.textContent = 'Error loading posts: ' + err.message;
+      });
+
+    // basic XSS helpers
+    function escapeHtml(str){ if(!str) return ''; return String(str).replace(/[&<>"']/g, s=>({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[s])); }
+    function escapeAttr(s){ return escapeHtml(s); }
+  </script>
+</body>
+</html>
