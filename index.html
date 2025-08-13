@@ -1,1 +1,340 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Dream — Vision 3.0</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600&display=swap" rel="stylesheet" />
+
+<!-- SEO Meta -->
+<meta name="description" content="Daily Dream — Your daily source of trends, news, and inspiration.">
+<meta name="keywords" content="Daily Dream, news, trends, blog, inspiration">
+<meta name="author" content="Daily Dream">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GK14G35SPN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-GK14G35SPN');
+</script>
+
+<style>
+/* ================= Reset & Base ================= */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to right, #141e30, #243b55);
+  color: #f0f0f0;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+a { color: #00aaff; text-decoration: none; transition: color 0.3s ease; }
+a:hover { color: #0088cc; }
+
+/* ================= Header & Nav ================= */
+header {
+  background: #1b2735;
+  padding: 20px 40px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+  font-size: 1.8rem;
+  font-weight: 600;
+  text-align: center;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin: 15px 0;
+}
+nav ul li { font-weight: 600; }
+nav ul li a { font-size: 1.1rem; }
+
+/* ================= Container & Sections ================= */
+.container { width: 90%; max-width: 1100px; margin: auto; flex: 1; }
+section { padding: 40px 0; }
+.home-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+  gap: 25px;
+}
+
+/* ================= Post Cards ================= */
+.post-card, .card-home {
+  background: #2c3e50;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+}
+.post-card:hover, .card-home:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+}
+.post-card h2 { font-size: 1.4rem; margin-bottom: 10px; color: #00aaff; }
+.post-card p { color: #ddd; font-size: 1rem; margin-bottom: 15px; min-height: 60px; }
+.post-card a.read-more {
+  font-weight: 600; color: #00aaff;
+  border: 1.5px solid #00aaff; padding: 8px 14px;
+  border-radius: 4px; display: inline-block;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.post-card a.read-more:hover { background-color: #00aaff; color: #fff; }
+
+/* ================= Home Cards ================= */
+.card-home img { width: 100%; height: 180px; object-fit: cover; border-radius: 6px; margin-bottom: 12px; }
+.card-home a { display: block; font-size: 1.1rem; font-weight: 600; color: #00aaff; text-align: center; }
+.card-home a:hover { color: #66d9ff; }
+
+/* ================= Admin Panel ================= */
+input, textarea { width:100%; padding:8px; margin:6px 0; border-radius:6px; border:1px solid #284a5b; background:#071b26; color:#e6eef8; }
+button { background:#00aaff; color:#001; border:none; padding:8px 12px; border-radius:6px; cursor:pointer; }
+.small { font-size:13px; color:#9fb4c9; }
+.posts-list{display:grid;gap:10px;}
+.post-row{display:flex;gap:8px;align-items:center;justify-content:space-between;background:#06202a;padding:10px;border-radius:6px;}
+.actions button{margin-left:6px;}
+.card-admin{background:#0f2431;padding:16px;border-radius:8px;margin-bottom:12px;}
+
+/* ================= Footer ================= */
+footer {
+  background: #1b2735;
+  color: #8899aa;
+  text-align: center;
+  padding: 20px 10px;
+  font-size: 0.9rem;
+  margin-top: auto;
+  box-shadow: 0 -2px 5px rgba(0,0,0,0.3);
+}
+
+/* ================= Responsive ================= */
+@media (max-width: 600px){
+  nav ul { flex-direction: column; gap: 15px; }
+}
+</style>
+</head>
+<body>
+
+<header>🌌 Daily Dream — Vision 3.0</header>
+
+<nav>
+  <ul>
+    <li><a href="#" onclick="showSection('home')">🏠 Home</a></li>
+    <li><a href="#" onclick="showSection('admin')">🛠 Admin Panel</a></li>
+  </ul>
+</nav>
+
+<div class="container">
+
+  <!-- Home Section -->
+  <section id="home-section">
+    <div class="home-grid">
+      <div class="card-home">
+        <img src="https://via.placeholder.com/600x400?text=Daily+Dream+Blogspot" alt="Blogspot">
+        <a href="https://newdailydream1.blogspot.com" target="_blank">Daily Dream Blogspot</a>
+      </div>
+      <div class="card-home">
+        <img src="https://via.placeholder.com/600x400?text=Daily+Dream+Kesug" alt="Kesug">
+        <a href="https://dailydream.kesug.com" target="_blank">Daily Dream Kesug</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Admin Panel Section -->
+  <section id="admin-section" style="display:none">
+    <div id="auth-section" class="card-admin">
+      <h3 id="auth-title">Login or Sign up</h3>
+      <div id="user-info" style="display:none">
+        <div class="small">Signed in as: <span id="user-email"></span></div>
+        <button id="btn-logout">Logout</button>
+      </div>
+
+      <div id="auth-forms">
+        <input id="email" placeholder="Email" />
+        <input id="password" type="password" placeholder="Password" />
+        <div style="display:flex;gap:8px;margin-top:8px">
+          <button id="btn-login">Login</button>
+          <button id="btn-signup">Sign up</button>
+        </div>
+        <div class="small" style="margin-top:8px">Only verified admin UID can write posts.</div>
+      </div>
+    </div>
+
+    <div id="admin-ui" style="display:none">
+      <div class="card-admin">
+        <h3>Add / Edit Post</h3>
+        <input id="post-title" placeholder="Post title" />
+        <input id="post-image" placeholder="Image URL (optional)" />
+        <input id="post-excerpt" placeholder="Short excerpt (optional)" />
+        <textarea id="post-content" rows="6" placeholder="Full content (HTML allowed)"></textarea>
+        <div style="margin-top:8px"><button id="btn-save">Save Post</button> <button id="btn-clear">Clear</button></div>
+      </div>
+
+      <div class="card-admin">
+        <h3>Existing Posts</h3>
+        <div class="posts-list" id="posts-list">Loading...</div>
+      </div>
+    </div>
+
+    <div id="log" class="card-admin small"></div>
+  </section>
+</div>
+
+<footer>© 2025 Daily Dream. All rights reserved.</footer>
+
+<!-- Firebase -->
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+
+<script>
+// Toggle sections
+function showSection(id){
+  document.getElementById('home-section').style.display = (id==='home') ? '' : 'none';
+  document.getElementById('admin-section').style.display = (id==='admin') ? '' : 'none';
+}
+
+// Firebase config
+const firebaseConfig = {
+  apiKey: "YOUR_API_KEY",
+  authDomain: "YOUR_PROJECT.firebaseapp.com",
+  projectId: "YOUR_PROJECT_ID",
+};
+firebase.initializeApp(firebaseConfig);
+const auth = firebase.auth();
+const db = firebase.firestore();
+
+// DOM
+const emailEl = document.getElementById('email');
+const passEl = document.getElementById('password');
+const btnLogin = document.getElementById('btn-login');
+const btnSignup = document.getElementById('btn-signup');
+const btnLogout = document.getElementById('btn-logout');
+const authTitle = document.getElementById('auth-title');
+const userInfo = document.getElementById('user-info');
+const userEmailEl = document.getElementById('user-email');
+const adminUi = document.getElementById('admin-ui');
+const logEl = document.getElementById('log');
+
+const postTitle = document.getElementById('post-title');
+const postImage = document.getElementById('post-image');
+const postExcerpt = document.getElementById('post-excerpt');
+const postContent = document.getElementById('post-content');
+const btnSave = document.getElementById('btn-save');
+const postsList = document.getElementById('posts-list');
+
+let editId = null;
+let currentUser = null;
+
+function log(msg){ logEl.textContent = msg; }
+
+auth.onAuthStateChanged(user => {
+  currentUser = user;
+  if(user){
+    userInfo.style.display = '';
+    userEmailEl.textContent = user.email;
+    document.getElementById('auth-forms').style.display = 'none';
+    authTitle.textContent = 'Admin';
+    checkIfAdminAndShow(user.uid);
+  } else {
+    userInfo.style.display = 'none';
+    document.getElementById('auth-forms').style.display = '';
+    authTitle.textContent = 'Login or Sign up';
+    adminUi.style.display = 'none';
+  }
+});
+
+btnSignup.onclick = () => {
+  const email = emailEl.value.trim(), pw = passEl.value.trim();
+  if(!email || !pw) { log('Enter email & password'); return; }
+  auth.createUserWithEmailAndPassword(email,pw)
+    .then(()=> log('Signup success. Please verify email from your inbox.'))
+    .catch(e=> log(e.message));
+};
+
+btnLogin.onclick = () => {
+  const email = emailEl.value.trim(), pw = passEl.value.trim();
+  if(!email || !pw) { log('Enter email & password'); return; }
+  auth.signInWithEmailAndPassword(email,pw)
+    .then(()=> log('Login success'))
+    .catch(e=> log(e.message));
+};
+
+btnLogout.onclick = ()=> auth.signOut().then(()=> log('Signed out'));
+
+// Admin UID
+const ALLOWED_ADMIN_UIDS = ["YOUR_ADMIN_UID"];
+
+function checkIfAdminAndShow(uid){
+  if(ALLOWED_ADMIN_UIDS.includes(uid)){
+    adminUi.style.display = '';
+    loadPostsList();
+  } else {
+    adminUi.style.display = 'none';
+    log('Your account is not set as admin.');
+  }
+}
+
+btnSave.onclick = async () => {
+  const title = postTitle.value.trim();
+  if(!title){ log('Title required'); return; }
+  const data = {
+    title,
+    imageUrl: postImage.value.trim() || null,
+    excerpt: postExcerpt.value.trim() || null,
+    content: postContent.value.trim() || null,
+    updatedAt: firebase.firestore.FieldValue.serverTimestamp(),
+  };
+  try {
+    if(editId){
+      await db.collection('posts').doc(editId).update(data);
+      log('Post updated');
+    } else {
+      data.createdAt = firebase.firestore.FieldValue.serverTimestamp();
+      await db.collection('posts').add(data);
+      log('Post created');
+    }
+    clearForm();
+  } catch(e){ log('Error saving post: '+e.message); }
+};
+
+function clearForm(){ postTitle.value=''; postImage.value=''; postExcerpt.value=''; postContent.value=''; editId=null; }
+
+function loadPostsList(){
+  postsList.innerHTML = 'Loading...';
+  db.collection('posts').orderBy('createdAt','desc').get()
+    .then(snap=>{
+      postsList.innerHTML = '';
+      if(snap.empty){ postsList.innerHTML = '<div class="small">No posts yet</div>'; return; }
+      snap.forEach(doc=>{
+        const d = doc.data();
+        const row = document.createElement('div'); row.className='post-row';
+        const left = document.createElement('div');
+        left.innerHTML = `<strong>${escapeHtml(d.title||'Untitled')}</strong><div class="small">${d.excerpt||''}</div>`;
+        const actions = document.createElement('div'); actions.className='actions';
+        const btnEdit = document.createElement('button'); btnEdit.textContent='Edit';
+        btnEdit.onclick = ()=> { editId = doc.id; postTitle.value = d.title||''; postImage.value = d.imageUrl||''; postExcerpt.value = d.excerpt||''; postContent.value = d.content||''; window.scrollTo(0,0); };
+        const btnDelete = document.createElement('button'); btnDelete.textContent='Delete';
+        btnDelete.onclick = async ()=> {
+          if(!confirm('Delete this post?')) return;
+          try { await db.collection('posts').doc(doc.id).delete(); log('Deleted'); loadPostsList(); } catch(e){ log('Delete failed: '+e.message); }
+        };
+        actions.appendChild(btnEdit); actions.appendChild(btnDelete);
+        row.appendChild(left); row.appendChild(actions);
+        postsList.appendChild(row);
+      });
+    })
+    .catch(e=> postsList.innerHTML='Error: '+e.message);
+}
+
+function escapeHtml(s){ if(!s) return ''; return String(s).replace(/[&<>"']/g, c=>({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[c])); }
+</script>
+</body>
+</html>
