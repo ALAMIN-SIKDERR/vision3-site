@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vision 3.0</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Segoe+UI&display=swap" rel="stylesheet" />
+
+<style>
+/* Reset */
+* { box-sizing: border-box; margin:0; padding:0; }
+body, html { height:100%; font-family:'Segoe UI', sans-serif; color:#f0f0f0; line-height:1.6; display:flex; flex-direction:column; min-height:100vh; background-size:cover; background-position:center center; position:relative; }
+
+/* Overlay */
+body::before { content:""; position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(20,30,48,0.75); z-index:-1; }
+
+header { width:100%; max-width:900px; padding:30px 20px; text-align:center; margin:20px auto 0 auto; border-bottom:2px solid #00aaff; background:rgba(0,0,0,0.4); border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,0.5); }
+header h1 { font-size:3rem; letter-spacing:3px; color:#00aaff; text-shadow:0 0 8px #00aaff; }
+
+main { width:100%; max-width:900px; margin:20px auto 50px auto; background:rgba(0,0,0,0.5); padding:25px; border-radius:10px; box-shadow:0 6px 20px rgba(0,0,0,0.7); flex-grow:1; }
+
+/* Search Section */
+.search-section { margin-bottom:30px; text-align:center; }
+.search-section input[type="text"] { padding:12px 20px; width:70%; max-width:400px; border:none; border-radius:25px 0 0 25px; font-size:1.1rem; outline:none; transition:box-shadow 0.3s ease; }
+.search-section input[type="text"]:focus { box-shadow:0 0 8px #00aaff; }
+.search-section button { padding:12px 25px; border:none; background-color:#00aaff; color:white; font-weight:600; border-radius:0 25px 25px 0; cursor:pointer; transition:0.3s; font-size:1.1rem; }
+.search-section button:hover { background-color:#0088cc; box-shadow:0 0 10px #0088cc; }
+
+/* Home Section 2 URLs */
+.home-links { display:flex; gap:20px; flex-wrap:wrap; justify-content:center; margin-bottom:30px; }
+.link-card { background:rgba(0,0,0,0.5); border-radius:10px; overflow:hidden; width:280px; text-align:center; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.link-card img { width:100%; height:180px; object-fit:cover; }
+.link-card h3 { color:#00aaff; margin:15px 0; }
+.link-card:hover { transform:translateY(-5px); box-shadow:0 10px 25px rgba(0,0,0,0.7); }
+
+/* Posts Grid */
+.posts { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:25px; }
+.post-card { background:#2c3e50; padding:20px; border-radius:8px; box-shadow:0 6px 15px rgba(0,0,0,0.4); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.post-card:hover { transform:translateY(-5px); box-shadow:0 10px 25px rgba(0,0,0,0.8); }
+.post-card h2 { font-size:1.4rem; margin-bottom:10px; color:#00aaff; text-shadow:0 0 5px #00aaff; }
+.post-card p { color:#ddd; font-size:1rem; margin-bottom:15px; min-height:60px; }
+.post-card a.read-more { font-weight:600; color:#00aaff; border:1.5px solid #00aaff; padding:8px 14px; border-radius:4px; display:inline-block; transition:0.3s; text-decoration:none; box-shadow:0 0 5px #00aaff; }
+.post-card a.read-more:hover { background-color:#00aaff; color:#fff; box-shadow:0 0 15px #00aaff; }
+
+footer { padding:20px 10px; text-align:center; font-size:0.9rem; color:#8899aa; background:rgba(0,0,0,0.4); border-top:1px solid #00aaff; box-shadow:0 -2px 5px rgba(0,0,0,0.3); }
+
+/* Admin Panel */
+.wrap{max-width:980px;margin:12px auto}
+.card{background:#0f2431;padding:16px;border-radius:8px;margin-bottom:12px}
+input,textarea{width:100%;padding:8px;margin:6px 0;border-radius:6px;border:1px solid #284a5b;background:#071b26;color:#e6eef8}
+button{background:#00aaff;color:#001; border:none;padding:8px 12px;border-radius:6px;cursor:pointer}
+.small{font-size:13px;color:#9fb4c9}
+.posts-list{display:grid;gap:10px}
+.post-row{display:flex;gap:8px;align-items:center;justify-content:space-between;background:#06202a;padding:10px;border-radius:6px}
+.actions button{margin-left:6px}
+
+/* Responsive */
+@media (max-width:600px){header h1{font-size:2.2rem} .search-section input[type="text"]{width:60%} .post-card{padding:15px}}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Vision 3.0</h1>
+</header>
+
+<main>
+
+  <!-- Search -->
+  <section class="search-section">
+    <form onsubmit="return performSearch()">
+      <input type="text" id="searchInput" placeholder="Search posts..." />
+      <button type="submit">Search</button>
+    </form>
+  </section>
+
+  <!-- Home Links -->
+  <section class="home-links">
+    <div class="link-card">
+      <a href="https://newdailydream1.blogspot.com" target="_blank">
+        <img src="https://images.unsplash.com/photo-1557682224-5b8590cd9ec5?auto=format&fit=crop&w=600&q=80" alt="New Daily Dream"/>
+        <h3>New Daily Dream</h3>
+      </a>
+    </div>
+    <div class="link-card">
+      <a href="https://dailydream.kesug.com" target="_blank">
+        <img src="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?auto=format&fit=crop&w=600&q=80" alt="Daily Dream"/>
+        <h3>Daily Dream</h3>
+      </a>
+    </div>
+  </section>
+
+  <!-- Posts -->
+  <section class="posts" id="posts">
+    <article class="post-card">
+      <h2>Latest Tech Trends in 2025</h2>
+      <p>Discover the emerging technologies that will shape our future this year.</p>
+      <a href="#" class="read-more">Read More</a>
+    </article>
+
+    <article class="post-card">
+      <h2>How to Stay Healthy and Fit</h2>
+      <p>Simple daily routines and tips to keep your body and mind active.</p>
+      <a href="#" class="read-more">Read More</a>
+    </article>
+
+    <article class="post-card">
+      <h2>Top 10 Travel Destinations</h2>
+      <p>Explore the most beautiful places around the world you must visit.</p>
+      <a href="#" class="read-more">Read More</a>
+    </article>
+  </section>
+
+  <!-- Admin Panel -->
+  <div class="wrap" id="admin-ui">
+    <div class="card">
+      <h3>Add / Edit Post</h3>
+      <input id="post-title" placeholder="Post title" />
+      <input id="post-image" placeholder="Image URL (optional)" />
+      <input id="post-excerpt" placeholder="Short excerpt (optional)" />
+      <textarea id="post-content" rows="6" placeholder="Full content (HTML allowed)"></textarea>
+      <div style="margin-top:8px">
+        <button id="btn-save">Save Post</button>
+        <button id="btn-clear">Clear</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Existing Posts</h3>
+      <div class="posts-list" id="posts-list">Loading...</div>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  © 2025 Vision 3.0. All rights reserved.  
+  <br />
+  Hosted on <a href="https://vision3-site.pages.dev" target="_blank" style="color:#00aaff;">GitHub Pages</a>
+</footer>
+
+<!-- Firebase -->
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+
+<script>
+// ===== Random Background =====
+const backgrounds = [
+  'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1350&q=80',
+  'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1350&q=80',
+  'https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?auto=format&fit=crop&w=1350&q=80',
+  'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=1350&q=80',
+  'https://images.unsplash.com/photo-1516117172878-fd2c41f4a759?auto=format&fit=crop&w=1350&q=80'
+];
+document.addEventListener('DOMContentLoaded', () => {
+  const randomBg = backgrounds[Math.floor(Math.random()*backgrounds.length)];
+  document.body.style.backgroundImage = `url('${randomBg}')`;
+});
+
+// ===== Search Function =====
+function performSearch() {
+  const query = document.getElementById('searchInput').value.toLowerCase();
+  const posts = document.querySelectorAll('.post-card');
+  posts.forEach(post => {
+    const title = post.querySelector('h2').textContent.toLowerCase();
+    const content = post.querySelector('p').textContent.toLowerCase();
+    post.style.display = (title.includes(query) || content.includes(query)) ? '' : 'none';
+  });
+  return false;
+}
+
+// ===== Firebase Admin Panel ======
+const firebaseConfig = {
+  apiKey: "YOUR_API_KEY",
+  authDomain: "YOUR_PROJECT.firebaseapp.com",
+  projectId: "YOUR_PROJECT_ID",
+};
+firebase.initializeApp(firebaseConfig);
+const auth = firebase.auth();
+const db = firebase.firestore();
+
+const postTitle = document.getElementById('post-title');
+const postImage = document.getElementById('post-image');
+const postExcerpt = document.getElementById('post-excerpt');
+const postContent = document.getElementById('post-content');
+const btnSave = document.getElementById('btn-save');
+const postsList = document.getElementById('posts-list');
+
+let editId = null;
+
+btnSave.onclick = async () => {
+  const title = postTitle.value.trim();
+  if(!title) return alert('Title required');
+  const data = {
+    title,
+    imageUrl: postImage.value.trim() || null,
+    excerpt: postExcerpt.value.trim() || null,
+    content: postContent.value.trim() || null,
+    updatedAt: firebase.firestore.FieldValue.serverTimestamp(),
+  };
+  try {
+    if(editId){
+      await db.collection('posts').doc(editId).update(data);
+    } else {
+      data.createdAt = firebase.firestore.FieldValue.serverTimestamp();
+      await db.collection('posts').add(data);
+    }
+    loadPostsList(); clearForm();
+  } catch(e){ alert(e.message); }
+};
+
+function clearForm(){ postTitle.value=''; postImage.value=''; postExcerpt.value=''; postContent.value=''; editId=null; }
+document.getElementById('btn-clear').onclick = clearForm;
+
+async function loadPostsList(){
+  postsList.innerHTML = 'Loading...';
+  const snapshot = await db.collection('posts').orderBy('updatedAt','desc').get();
+  postsList.innerHTML = '';
+  snapshot.forEach(doc=>{
+    const p = doc.data();
+    const div = document.createElement('div'); div.className='post-row';
+    div.innerHTML = `<span>${p.title}</span>
+    <span class="actions">
+      <button onclick="editPost('${doc.id}')">Edit</button>
+      <button onclick="deletePost('${doc.id}')">Delete</button>
+    </span>`;
+    postsList.appendChild(div);
+  });
+}
+window.editPost = async (id)=>{
+  editId = id;
+  const doc = await db.collection('posts').doc(id).get();
+  const p = doc.data();
+  postTitle.value=p.title;
+  postImage.value=p.imageUrl||'';
+  postExcerpt.value=p.excerpt||'';
+  postContent.value=p.content||'';
+}
+window.deletePost = async (id)=>{ if(confirm('Delete?')) await db.collection('posts').doc(id).delete(); loadPostsList(); }
+loadPostsList();
+</script>
+
+</body>
+</html>
