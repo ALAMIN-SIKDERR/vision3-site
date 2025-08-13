@@ -1,228 +1,252 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- SITE VERIFICATION -->
-  <meta name="google-site-verification" content="Jbecag7bzqbrqNpGZ3QwcA7vmEi-VA5iEKqc8GlILZo" />
-
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
   <title>Vision 3.0</title>
 
-  <!-- CORE SEO -->
-  <meta name="description" content="Vision 3.0 - Stay updated with latest trends, news, and inspiration across technology, lifestyle, health, and more." />
-  <meta name="keywords" content="news, trends, inspiration, technology, lifestyle, health, search, updates" />
+  <!-- Basic SEO -->
+  <meta name="description" content="Vision 3.0 - Latest trends, news and inspiration across technology, lifestyle, health and more." />
+  <meta name="keywords" content="vision 3.0, news, trends, inspiration, technology, lifestyle, health, search" />
   <meta name="author" content="Vision 3.0" />
   <meta name="robots" content="index, follow" />
   <meta name="googlebot" content="index, follow" />
 
   <!-- Open Graph -->
   <meta property="og:title" content="Vision 3.0 - Latest Trends and News" />
-  <meta property="og:description" content="Stay updated with latest trends, news, and inspiration across technology, lifestyle, health, and more." />
+  <meta property="og:description" content="Stay updated with latest trends, news and inspiration across tech, lifestyle, health and more." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://vision3.eu.org" />
-  <meta property="og:image" content="https://vision3.eu.org/path-to-image.jpg" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80" />
 
-  <!-- Twitter Card -->
+  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Vision 3.0 - Latest Trends and News" />
-  <meta name="twitter:description" content="Stay updated with latest trends, news, and inspiration across technology, lifestyle, health, and more." />
-  <meta name="twitter:image" content="https://vision3.eu.org/path-to-image.jpg" />
-
-  <!-- Google Analytics (use your latest ID) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GQ5G0F6X29"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){ dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-GQ5G0F6X29');
-  </script>
-
-  <!-- Push Notification / Subscribe Scripts (as you provided) -->
-  <script esub_for_shop="-7EBNQCgQAAAecSgIDeIUABQ5XhvQREQoRCQoRDUIRDRIAAX9hZGNvbWJvATE" user_safe_id="d9f01912da4eb20e820179a174ff9d09" cat="" src="https://cf.just-news.pro/js/fcmjsgo/bckfix4shp.js"></script>
-  <script esub_for_shop="-7EBNQCgQAAAecSgIDeIUABQ5XhvQREQoRCQoRDUIRDRIAAX9hZGNvbWJvATE" user_safe_id="d9f01912da4eb20e820179a174ff9d09" cat="" src="https://cf.just-news.pro/js/fcmjsgo/subscribe4shp.js"></script>
+  <meta name="twitter:description" content="Stay updated with latest trends, news and inspiration." />
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80" />
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600&display=swap" rel="stylesheet" />
 
   <style>
-    /* ===== Premium base + your previous styles merged ===== */
-    *{ box-sizing:border-box; margin:0; padding:0 }
+    /* Reset */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
-    html,body{
-      height:100%;
-      font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color:#f0f0f0; line-height:1.6; min-height:100vh;
-      display:flex; flex-direction:column;
-      background:#0a1628;
+    html, body {
+      height: 100%;
+      min-height: 100%;
     }
 
-    /* Dynamic bg image (set via JS) with overlay */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #f0f0f0;
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      /* Background image will be injected via JS */
+      background: #0b1526 no-repeat center center fixed;
+      background-size: cover;
+      position: relative;
+      transition: background-image .4s ease-in-out;
+    }
+
+    /* Dark overlay so text stays readable */
     body::before{
-      content:""; position:fixed; inset:0;
-      background:rgba(20,30,48,0.78);
-      z-index:-1;
-    }
-    .bg-img{
-      position:fixed; inset:0; z-index:-2;
-      background: no-repeat center/cover;
-      filter: saturate(1.05) contrast(1.05);
-      transition: opacity .6s ease;
-      opacity:1;
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: rgba(10, 16, 28, 0.75);
+      z-index: -1;
     }
 
     header{
-      width:100%; max-width:1100px; margin:20px auto 0;
-      background:rgba(0,0,0,0.4);
-      border-bottom:2px solid #00aaff; border-radius:10px;
-      padding:22px 20px; text-align:center;
-      box-shadow:0 4px 12px rgba(0,0,0,.45);
+      width: 100%;
+      max-width: 1000px;
+      margin: 20px auto 0;
+      background: rgba(0,0,0,0.4);
+      border: 1px solid rgba(0,170,255,.35);
+      border-radius: 12px;
+      padding: 18px 20px;
+      text-align: center;
+      box-shadow: 0 6px 18px rgba(0,0,0,.45);
     }
     header h1{
-      font-size:2.6rem; letter-spacing:2px; color:#00c2ff;
-      text-shadow:0 0 8px #00aaff;
+      font-size: 2.4rem;
+      letter-spacing: 2px;
+      color: #00aaff;
+      text-shadow: 0 0 10px #00aaff;
     }
 
     nav{
-      display:flex; justify-content:center; gap:10px; margin:14px auto 0;
+      display:flex; justify-content:center; gap:10px; margin:14px 0 0;
     }
     nav button{
-      background:#00aaff; color:#001; border:none;
-      padding:10px 16px; border-radius:8px; cursor:pointer; font-weight:600;
-      box-shadow:0 6px 14px rgba(0,170,255,.22);
-      transition: transform .15s ease, box-shadow .2s ease, background .2s ease;
+      background:#00aaff; color:#001; border:none; padding:8px 14px;
+      border-radius:8px; cursor:pointer; font-weight:600
     }
-    nav button:hover{
-      background:#00bfff; transform: translateY(-1px);
-      box-shadow:0 10px 22px rgba(0,191,255,.25);
-    }
+    nav button.secondary{ background:transparent; color:#cfe9f7; border:1px solid #2e5768; }
+    nav button:hover{ filter:brightness(1.05); }
 
-    .container{ max-width:1100px; width:92%; margin:20px auto 50px; flex:1; }
+    .container{ max-width:1000px; width:92%; margin: 18px auto 40px; flex:1; }
 
     /* Search */
-    .search-section{ margin:0 auto 22px; text-align:center; }
-    .search-wrap{ display:inline-flex; align-items:center; border-radius:28px; overflow:hidden; box-shadow:0 6px 18px rgba(0,0,0,.35) }
-    .search-section input[type="text"]{
-      padding:12px 16px; width:60vw; max-width:420px; border:none; outline:none;
-      background:#0d1e2b; color:#eaf6ff; font-size:1rem;
+    .search-section{
+      background: rgba(0,0,0,.45);
+      border: 1px solid rgba(0,170,255,.25);
+      border-radius: 12px;
+      padding: 16px;
+      text-align:center;
+      margin-bottom: 18px;
+      box-shadow: 0 6px 16px rgba(0,0,0,.35);
     }
+    .search-wrap{ display:flex; justify-content:center; align-items:center; gap:0; }
+    .search-section input[type="text"]{
+      padding: 12px 16px;
+      width: 70%;
+      max-width: 420px;
+      border: 1px solid #2b4f61;
+      border-right: none;
+      border-radius: 28px 0 0 28px;
+      background: #061726;
+      color: #e6eef8;
+      outline: none;
+    }
+    .search-section input[type="text"]:focus{ box-shadow: 0 0 8px #00aaff; }
     .search-section button{
-      padding:12px 18px; border:none; background:#00aaff; color:#001; font-weight:700; cursor:pointer;
+      padding: 12px 18px;
+      border: none;
+      background-color: #00aaff;
+      color: #001;
+      font-weight: 700;
+      border-radius: 0 28px 28px 0;
+      cursor: pointer;
     }
 
-    /* Home link cards (your two URLs) */
+    /* Home Cards (2 URL section) */
     .home-grid{
-      display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:20px; margin-bottom:26px;
+      display:grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+      gap:18px; margin-bottom: 22px;
     }
     .card{
       background:#0f2431; border-radius:12px; overflow:hidden;
-      box-shadow:0 10px 24px rgba(0,0,0,.35);
-      transition: transform .2s ease, box-shadow .2s ease;
+      box-shadow: 0 10px 24px rgba(0,0,0,.45);
+      border:1px solid rgba(0,170,255,.18);
     }
-    .card:hover{ transform: translateY(-4px); box-shadow:0 16px 34px rgba(0,0,0,.45); }
-    .card img{ width:100%; height:180px; object-fit:cover }
+    .card img{ width:100%; height:180px; object-fit:cover; display:block; }
     .card a{
-      display:block; padding:14px; color:#76ddff; font-weight:700; text-decoration:none; text-align:center;
+      display:block; padding:14px 16px; text-decoration:none; color:#7bd3ff; font-weight:700; text-align:center;
     }
-    .card a:hover{ color:#b8efff }
+    .card a:hover{ color:#b9ecff; }
 
-    /* Posts grid (public homepage) */
-    .posts{ display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:22px; }
+    /* Posts Grid (sample + search filterable) */
+    .posts{
+      display:grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap:18px;
+    }
     .post-card{
-      background:#2c3e50; border-radius:10px; padding:18px;
-      box-shadow:0 6px 18px rgba(0,0,0,.35);
-      transition: transform .2s ease, box-shadow .2s ease;
+      background:#2c3e50; padding:18px; border-radius:10px;
+      box-shadow:0 8px 18px rgba(0,0,0,.4);
+      transition:transform .25s ease, box-shadow .25s ease;
     }
-    .post-card:hover{ transform: translateY(-4px); box-shadow:0 14px 26px rgba(0,0,0,.5) }
-    .post-card h2{ font-size:1.25rem; margin-bottom:8px; color:#00c2ff; text-shadow:0 0 4px rgba(0,194,255,.6) }
-    .post-card p{ color:#e5eef7; font-size:.98rem; margin:8px 0 12px }
-    .post-card .read-more{
-      display:inline-block; text-decoration:none; color:#00c2ff; border:1.5px solid #00aaff;
-      padding:8px 12px; border-radius:6px; font-weight:700;
+    .post-card:hover{ transform: translateY(-4px); box-shadow:0 12px 26px rgba(0,0,0,.55); }
+    .post-card h2{ font-size:1.2rem; margin-bottom:8px; color:#7bd3ff; }
+    .post-card p{ color:#dbe7ef; min-height:56px; margin-bottom:12px; }
+    .read-more{
+      display:inline-block; padding:8px 12px; border:1.5px solid #7bd3ff; border-radius:6px; color:#7bd3ff; font-weight:700; text-decoration:none;
     }
-    .post-thumb{ width:100%; height:160px; object-fit:cover; border-radius:8px; margin-bottom:10px }
+    .read-more:hover{ background:#7bd3ff; color:#001; }
 
     /* Admin Panel */
-    .admin-wrap{ margin-top:26px }
-    .card-admin{ background:#0f2431; padding:16px; border-radius:10px; margin-bottom:14px; box-shadow:0 6px 16px rgba(0,0,0,.35) }
-    input,textarea{
-      width:100%; padding:10px; margin:6px 0 10px; border-radius:8px; border:1px solid #284a5b;
-      background:#071b26; color:#e6eef8;
+    #admin-section .card-admin{
+      background:#0f2431; padding:16px; border-radius:10px; margin-bottom:14px;
+      border:1px solid rgba(0,170,255,.2);
     }
-    .btn{ background:#00aaff; color:#001; border:none; padding:10px 14px; border-radius:8px; cursor:pointer; font-weight:700 }
-    .btn.alt{ background:#243b55; color:#cdefff }
-    .small{ font-size:13px; color:#9fb4c9 }
-    .posts-list{ display:grid; gap:10px }
-    .post-row{ display:flex; gap:8px; align-items:center; justify-content:space-between; background:#06202a; padding:10px; border-radius:8px }
+    input, textarea{
+      width:100%; padding:10px; margin:6px 0; border-radius:8px;
+      border:1px solid #284a5b; background:#071b26; color:#e6eef8;
+    }
+    .btn{ background:#00aaff; color:#001; border:none; padding:9px 12px; border-radius:8px; cursor:pointer; font-weight:700 }
+    .btn.alt{ background:transparent; color:#cfe9f7; border:1px solid #2e5768; }
+    .small{ font-size:13px; color:#9fb4c9; }
+
+    .posts-list{ display:grid; gap:10px; }
+    .post-row{
+      display:flex; gap:8px; align-items:center; justify-content:space-between;
+      background:#06202a; padding:10px; border-radius:8px;
+    }
+    .actions button{ margin-left:6px; }
 
     footer{
-      background:rgba(0,0,0,.35); border-top:1px solid #0d2f44;
-      text-align:center; padding:16px 10px; color:#9fbbcf; font-size:.95rem;
+      margin-top:auto; padding:16px; text-align:center; background: rgba(0,0,0,.4);
+      border-top: 1px solid rgba(0,170,255,.25); color:#9fb4c9;
     }
 
+    /* Responsive tweaks */
     @media (max-width:600px){
-      header h1{ font-size:2.1rem }
-      .search-section input[type="text"]{ width:64vw }
-      .card img{ height:150px }
+      header h1{ font-size: 2rem; }
+      .search-section input[type="text"]{ width: 62%; }
     }
   </style>
 </head>
 <body>
-  <!-- Dynamic background layer -->
-  <div class="bg-img" id="bgLayer"></div>
-
+  <!-- Header -->
   <header>
     <h1>🌌 Vision 3.0</h1>
     <nav>
-      <button onclick="showSection('home')">🏠 Home</button>
-      <button onclick="showSection('posts')">📰 Posts</button>
-      <button onclick="showSection('admin')">🛠 Admin</button>
+      <button class="secondary" onclick="showSection('home')">🏠 Home</button>
+      <button onclick="showSection('admin')">🛠 Admin Panel</button>
     </nav>
   </header>
 
-  <main class="container">
-
-    <!-- HOME: 2 cards linking to your URLs -->
+  <div class="container">
+    <!-- HOME SECTION -->
     <section id="home-section">
+      <!-- Search -->
+      <div class="search-section">
+        <form class="search-wrap" onsubmit="return performSearch()">
+          <input type="text" id="searchInput" placeholder="Search posts..." />
+          <button type="submit">Search</button>
+        </form>
+      </div>
+
+      <!-- 2 URL Cards -->
       <div class="home-grid">
         <div class="card">
-          <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop" alt="Daily Dream Blogspot">
-          <a href="https://newdailydream1.blogspot.com" target="_blank" rel="noopener">Daily Dream — Blogspot</a>
+          <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=70" alt="Daily Dream Blogspot" />
+          <a href="https://newdailydream1.blogspot.com" target="_blank" rel="noopener">Daily Dream Blogspot</a>
         </div>
         <div class="card">
-          <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop" alt="Daily Dream Kesug">
-          <a href="https://dailydream.kesug.com" target="_blank" rel="noopener">Daily Dream — Kesug</a>
+          <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=70" alt="Daily Dream Kesug" />
+          <a href="https://dailydream.kesug.com" target="_blank" rel="noopener">Daily Dream Kesug</a>
         </div>
       </div>
 
-      <!-- Search -->
-      <section class="search-section">
-        <div class="search-wrap">
-          <input type="text" id="searchInput" placeholder="Search posts..." />
-          <button onclick="performSearch()">Search</button>
-        </div>
-      </section>
+      <!-- Sample Posts (filterable) -->
+      <section class="posts" id="posts">
+        <article class="post-card">
+          <h2>Latest Tech Trends in 2025</h2>
+          <p>Discover the emerging technologies that will shape our future this year.</p>
+          <a href="#" class="read-more">Read More</a>
+        </article>
 
-      <!-- Public posts (from Firestore) -->
-      <section class="posts" id="public-posts"></section>
+        <article class="post-card">
+          <h2>How to Stay Healthy and Fit</h2>
+          <p>Simple daily routines and tips to keep your body and mind active.</p>
+          <a href="#" class="read-more">Read More</a>
+        </article>
+
+        <article class="post-card">
+          <h2>Top 10 Travel Destinations</h2>
+          <p>Explore the most beautiful places around the world you must visit.</p>
+          <a href="#" class="read-more">Read More</a>
+        </article>
+      </section>
     </section>
 
-    <!-- POSTS tab (same feed, separate anchor if you want different layout later) -->
-    <section id="posts-section" style="display:none">
-      <section class="search-section">
-        <div class="search-wrap">
-          <input type="text" id="searchInput2" placeholder="Search posts..." />
-          <button onclick="performSearch('#posts-section')">Search</button>
-        </div>
-      </section>
-      <section class="posts" id="public-posts-2"></section>
-    </section>
-
-    <!-- ADMIN -->
-    <section id="admin-section" class="admin-wrap" style="display:none">
+    <!-- ADMIN SECTION -->
+    <section id="admin-section" style="display:none">
       <div id="auth-section" class="card-admin">
         <h3 id="auth-title">Login or Sign up</h3>
-        <div id="user-info" style="display:none; margin-bottom:10px">
+        <div id="user-info" style="display:none">
           <div class="small">Signed in as: <span id="user-email"></span></div>
           <button id="btn-logout" class="btn alt">Logout</button>
         </div>
@@ -230,11 +254,13 @@
         <div id="auth-forms">
           <input id="email" placeholder="Email" />
           <input id="password" type="password" placeholder="Password" />
-          <div style="display:flex; gap:10px; margin-top:6px">
+          <div style="display:flex; gap:8px; margin-top:8px">
             <button id="btn-login" class="btn">Login</button>
             <button id="btn-signup" class="btn alt">Sign up</button>
           </div>
-          <div class="small" style="margin-top:8px">Only verified admin UID (in Firestore rules) can write posts.</div>
+          <div class="small" style="margin-top:8px">
+            Only verified admin UID can write posts (enforced in Firestore Security Rules).
+          </div>
         </div>
       </div>
 
@@ -259,11 +285,10 @@
 
       <div id="log" class="card-admin small"></div>
     </section>
-  </main>
+  </div>
 
   <footer>
-    © 2025 Vision 3.0. All rights reserved. · Hosted on
-    <a href="https://vision3-site.pages.dev" target="_blank" rel="noopener" style="color:#76ddff">GitHub Pages</a>
+    © 2025 Vision 3.0 • All rights reserved
   </footer>
 
   <!-- Firebase SDKs -->
@@ -272,40 +297,40 @@
   <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
 
   <script>
-    /* ======= 1) Section Switcher ======= */
-    function showSection(section){
-      document.getElementById('home-section').style.display  = (section==='home')  ? '' : 'none';
-      document.getElementById('posts-section').style.display = (section==='posts') ? '' : 'none';
-      document.getElementById('admin-section').style.display = (section==='admin') ? '' : 'none';
-    }
-
-    /* ======= 2) Random Background Setter ======= */
+    /* ========== Random Background (5 images) ========== */
     const BG_IMAGES = [
-      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=80",
-      "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80",
-      "https://images.unsplash.com/photo-1522199794611-8e6c7a4a25b0?auto=format&fit=crop&w=1600&q=80",
-      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1600&q=80",
-      "https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=1600&q=80"
+      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=2000&q=80",
+      "https://images.unsplash.com/photo-1517817748490-58fddf0a88b0?auto=format&fit=crop&w=2000&q=80",
+      "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=2000&q=80",
+      "https://images.unsplash.com/photo-1472214103451-9374bd1c798e?auto=format&fit=crop&w=2000&q=80",
+      "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=2000&q=80"
     ];
     (function setRandomBg(){
-      const pick = BG_IMAGES[Math.floor(Math.random()*BG_IMAGES.length)];
-      document.getElementById('bgLayer').style.backgroundImage = `url('${pick}')`;
+      const pick = BG_IMAGES[Math.floor(Math.random() * BG_IMAGES.length)];
+      document.body.style.backgroundImage = `url('${pick}')`;
     })();
 
-    /* ======= 3) Search (filters .post-card within a section) ======= */
-    function performSearch(scopeSelector){
-      const q = (scopeSelector ? document.querySelector(scopeSelector+' #searchInput2') : document.getElementById('searchInput')).value.toLowerCase().trim();
-      const scope = scopeSelector ? document.querySelector(scopeSelector) : document;
-      const cards = scope.querySelectorAll('.post-card.dynamic');
-      cards.forEach(card=>{
-        const title = (card.querySelector('h2')?.textContent || '').toLowerCase();
-        const excerpt = (card.querySelector('p')?.textContent || '').toLowerCase();
-        card.style.display = (title.includes(q) || excerpt.includes(q)) ? '' : 'none';
+    /* ========== Section Toggle ========== */
+    function showSection(which){
+      document.getElementById('home-section').style.display = (which === 'home') ? '' : 'none';
+      document.getElementById('admin-section').style.display = (which === 'admin') ? '' : 'none';
+      // small UX: scroll top
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    /* ========== Client-side Search (Home posts) ========== */
+    function performSearch(){
+      const q = document.getElementById('searchInput').value.toLowerCase().trim();
+      const posts = document.querySelectorAll('.post-card');
+      posts.forEach(p => {
+        const title = p.querySelector('h2').textContent.toLowerCase();
+        const text  = p.querySelector('p').textContent.toLowerCase();
+        p.style.display = (title.includes(q) || text.includes(q)) ? '' : 'none';
       });
       return false;
     }
 
-    /* ======= 4) Firebase Config (REPLACE) ======= */
+    /* ========== Firebase Config (REPLACE!) ========== */
     const firebaseConfig = {
       apiKey: "YOUR_API_KEY",
       authDomain: "YOUR_PROJECT.firebaseapp.com",
@@ -315,178 +340,153 @@
     const auth = firebase.auth();
     const db   = firebase.firestore();
 
-    /* ======= 5) Auth UI ======= */
+    /* ========== Admin/Auth Logic ========== */
     const emailEl = document.getElementById('email');
     const passEl  = document.getElementById('password');
     const btnLogin  = document.getElementById('btn-login');
     const btnSignup = document.getElementById('btn-signup');
     const btnLogout = document.getElementById('btn-logout');
+    const authTitle = document.getElementById('auth-title');
+    const userInfo  = document.getElementById('user-info');
+    const userEmailEl = document.getElementById('user-email');
+    const adminUi   = document.getElementById('admin-ui');
+    const logEl     = document.getElementById('log');
 
-    const userInfo   = document.getElementById('user-info');
-    const userEmail  = document.getElementById('user-email');
-    const authForms  = document.getElementById('auth-forms');
-    const authTitle  = document.getElementById('auth-title');
-    const adminUi    = document.getElementById('admin-ui');
-    const logEl      = document.getElementById('log');
+    const postTitle   = document.getElementById('post-title');
+    const postImage   = document.getElementById('post-image');
+    const postExcerpt = document.getElementById('post-excerpt');
+    const postContent = document.getElementById('post-content');
+    const btnSave   = document.getElementById('btn-save');
+    const postsList = document.getElementById('posts-list');
 
-    const ALLOWED_ADMIN_UIDS = ["YOUR_ADMIN_UID"]; // <-- put your UID(s)
+    let editId = null;
+    let currentUser = null;
 
     function log(msg){ logEl.textContent = msg; }
 
-    auth.onAuthStateChanged(async (user)=>{
+    // Set your own admin UID(s)
+    const ALLOWED_ADMIN_UIDS = ["YOUR_ADMIN_UID"];
+
+    auth.onAuthStateChanged(user => {
+      currentUser = user;
       if(user){
         userInfo.style.display = '';
-        userEmail.textContent  = user.email || '(no email)';
-        authForms.style.display = 'none';
-        authTitle.textContent   = 'Admin';
-        if(ALLOWED_ADMIN_UIDS.includes(user.uid)){
-          adminUi.style.display = '';
-          loadPostsList();
-        } else {
-          adminUi.style.display = 'none';
-          log('Your account is not set as admin.');
-        }
+        userEmailEl.textContent = user.email;
+        document.getElementById('auth-forms').style.display = 'none';
+        authTitle.textContent = 'Admin';
+        checkIfAdminAndShow(user.uid);
       } else {
         userInfo.style.display = 'none';
-        authForms.style.display = '';
+        document.getElementById('auth-forms').style.display = '';
         authTitle.textContent = 'Login or Sign up';
         adminUi.style.display = 'none';
       }
     });
 
-    btnSignup?.addEventListener('click', ()=>{
+    btnSignup.onclick = () => {
       const email = emailEl.value.trim(), pw = passEl.value.trim();
-      if(!email || !pw) return log('Enter email & password');
-      auth.createUserWithEmailAndPassword(email,pw)
-        .then(()=> log('Signup success. Please verify email from your inbox.'))
-        .catch(e=> log(e.message));
-    });
+      if(!email || !pw){ log('Enter email & password'); return; }
+      auth.createUserWithEmailAndPassword(email, pw)
+          .then(()=> log('Signup success. Verify your email.'))
+          .catch(e => log(e.message));
+    };
 
-    btnLogin?.addEventListener('click', ()=>{
+    btnLogin.onclick = () => {
       const email = emailEl.value.trim(), pw = passEl.value.trim();
-      if(!email || !pw) return log('Enter email & password');
-      auth.signInWithEmailAndPassword(email,pw)
-        .then(()=> log('Login success'))
-        .catch(e=> log(e.message));
-    });
+      if(!email || !pw){ log('Enter email & password'); return; }
+      auth.signInWithEmailAndPassword(email, pw)
+          .then(()=> log('Login success'))
+          .catch(e => log(e.message));
+    };
 
-    btnLogout?.addEventListener('click', ()=> auth.signOut().then(()=> log('Signed out')));
+    btnLogout && (btnLogout.onclick = () => auth.signOut().then(()=> log('Signed out')));
 
-    /* ======= 6) Admin CRUD ======= */
-    const postTitle   = document.getElementById('post-title');
-    const postImage   = document.getElementById('post-image');
-    const postExcerpt = document.getElementById('post-excerpt');
-    const postContent = document.getElementById('post-content');
-    const btnSave     = document.getElementById('btn-save');
-    const postsList   = document.getElementById('posts-list');
-
-    let editId = null;
-
-    function clearForm(){
-      postTitle.value=''; postImage.value=''; postExcerpt.value=''; postContent.value='';
-      editId=null;
+    function checkIfAdminAndShow(uid){
+      if(ALLOWED_ADMIN_UIDS.includes(uid)){
+        adminUi.style.display = '';
+        loadPostsList();
+      } else {
+        adminUi.style.display = 'none';
+        log('Your account is not set as admin (client-side). Add your UID in ALLOWED_ADMIN_UIDS and enforce in Firestore Rules.');
+      }
     }
 
-    btnSave?.addEventListener('click', async ()=>{
+    btnSave.onclick = async () => {
       const title = postTitle.value.trim();
-      if(!title) return log('Title required');
+      if(!title){ log('Title is required'); return; }
       const data = {
         title,
         imageUrl: postImage.value.trim() || null,
-        excerpt : postExcerpt.value.trim() || null,
-        content : postContent.value.trim() || null,
+        excerpt: postExcerpt.value.trim() || null,
+        content: postContent.value.trim() || null,
         updatedAt: firebase.firestore.FieldValue.serverTimestamp(),
       };
       try{
         if(editId){
           await db.collection('posts').doc(editId).update(data);
           log('Post updated');
-        }else{
+        } else {
           data.createdAt = firebase.firestore.FieldValue.serverTimestamp();
           await db.collection('posts').add(data);
           log('Post created');
         }
         clearForm();
-      }catch(e){ log('Error: '+e.message); }
-    });
+        loadPostsList();
+      }catch(e){
+        log('Error saving post: ' + e.message);
+      }
+    };
+
+    function clearForm(){
+      postTitle.value = '';
+      postImage.value = '';
+      postExcerpt.value = '';
+      postContent.value = '';
+      editId = null;
+    }
 
     function loadPostsList(){
       postsList.innerHTML = 'Loading...';
       db.collection('posts').orderBy('createdAt','desc').get()
         .then(snap=>{
-          postsList.innerHTML='';
+          postsList.innerHTML = '';
           if(snap.empty){ postsList.innerHTML = '<div class="small">No posts yet</div>'; return; }
           snap.forEach(doc=>{
             const d = doc.data();
-            const row = document.createElement('div'); row.className='post-row';
+            const row = document.createElement('div'); row.className = 'post-row';
             const left = document.createElement('div');
             left.innerHTML = `<strong>${escapeHtml(d.title||'Untitled')}</strong><div class="small">${escapeHtml(d.excerpt||'')}</div>`;
-            const actions = document.createElement('div'); actions.className='actions';
-            const bE = document.createElement('button'); bE.className='btn alt'; bE.textContent='Edit';
-            bE.onclick=()=>{ editId=doc.id; postTitle.value=d.title||''; postImage.value=d.imageUrl||''; postExcerpt.value=d.excerpt||''; postContent.value=d.content||''; window.scrollTo({top:0,behavior:'smooth'}); };
-            const bD = document.createElement('button'); bD.className='btn'; bD.textContent='Delete';
-            bD.onclick=async()=>{ if(!confirm('Delete this post?')) return; try{ await db.collection('posts').doc(doc.id).delete(); log('Deleted'); loadPostsList(); }catch(e){ log('Delete failed: '+e.message); } };
-            actions.appendChild(bE); actions.appendChild(bD);
+            const actions = document.createElement('div'); actions.className = 'actions';
+            const btnEdit = document.createElement('button'); btnEdit.className='btn alt'; btnEdit.textContent='Edit';
+            btnEdit.onclick = () => {
+              editId = doc.id;
+              postTitle.value   = d.title || '';
+              postImage.value   = d.imageUrl || '';
+              postExcerpt.value = d.excerpt || '';
+              postContent.value = d.content || '';
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+              showSection('admin');
+            };
+            const btnDelete = document.createElement('button'); btnDelete.className='btn alt'; btnDelete.textContent='Delete';
+            btnDelete.onclick = async () => {
+              if(!confirm('Delete this post?')) return;
+              try{
+                await db.collection('posts').doc(doc.id).delete();
+                log('Deleted');
+                loadPostsList();
+              }catch(e){ log('Delete failed: '+e.message); }
+            };
+            actions.appendChild(btnEdit); actions.appendChild(btnDelete);
             row.appendChild(left); row.appendChild(actions);
             postsList.appendChild(row);
           });
         })
-        .catch(e=> postsList.innerHTML='Error: '+e.message);
+        .catch(e => postsList.innerHTML = 'Error: ' + e.message);
     }
 
-    /* ======= 7) Public feed (real-time) on Home & Posts tabs ======= */
-    const feedContainers = [document.getElementById('public-posts'), document.getElementById('public-posts-2')];
-
-    db.collection('posts').orderBy('createdAt','desc').onSnapshot(snap=>{
-      feedContainers.forEach(c=> c.innerHTML = '');
-      if(snap.empty){
-        feedContainers.forEach(c=> c.innerHTML = '<div class="small">No posts yet</div>');
-        return;
-      }
-      snap.forEach(doc=>{
-        const d = doc.data();
-        const card = document.createElement('article');
-        card.className = 'post-card dynamic';
-
-        // thumb
-        if(d.imageUrl){
-          const img = document.createElement('img');
-          img.className = 'post-thumb';
-          img.src = d.imageUrl;
-          img.alt = d.title || 'Post image';
-          card.appendChild(img);
-        }
-
-        const h2 = document.createElement('h2'); h2.textContent = d.title || 'Untitled';
-        const p  = document.createElement('p');  p.textContent  = d.excerpt || (d.content ? stripHtml(d.content).slice(0,140)+'…' : '');
-        const a  = document.createElement('a');  a.className='read-more'; a.href='#'; a.textContent='Read More';
-        a.onclick=(e)=>{ e.preventDefault(); openModal(d); };
-
-        card.appendChild(h2); card.appendChild(p); card.appendChild(a);
-        feedContainers.forEach(c=> c.appendChild(card.cloneNode(true)));
-      });
-    });
-
-    /* ======= Helpers ======= */
-    function escapeHtml(s){ if(!s) return ''; return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
-    function stripHtml(html){ const div=document.createElement('div'); div.innerHTML = html||''; return div.textContent || div.innerText || ''; }
-
-    /* ======= Lightweight modal for "Read More" ======= */
-    function openModal(post){
-      const wrap = document.createElement('div');
-      wrap.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,.65);display:flex;align-items:center;justify-content:center;z-index:9999;padding:20px';
-      const box = document.createElement('div');
-      box.style.cssText='max-width:840px;width:96%;background:#0f2431;color:#e6eef8;border-radius:10px;box-shadow:0 10px 30px rgba(0,0,0,.5);padding:18px;position:relative;';
-      box.innerHTML = `
-        <h2 style="margin-bottom:8px;color:#76ddff">${escapeHtml(post.title||'Untitled')}</h2>
-        ${post.imageUrl?`<img src="${post.imageUrl}" alt="thumb" style="width:100%;max-height:360px;object-fit:cover;border-radius:8px;margin:10px 0">`:''}
-        <div style="max-height:60vh;overflow:auto">${post.content || escapeHtml(post.excerpt||'')}</div>
-        <button id="closeModal" class="btn alt" style="margin-top:12px">Close</button>
-      `;
-      wrap.appendChild(box);
-      document.body.appendChild(wrap);
-      document.getElementById('closeModal').onclick = ()=> wrap.remove();
-      wrap.addEventListener('click', (e)=>{ if(e.target===wrap) wrap.remove(); });
+    function escapeHtml(s){
+      if(!s) return '';
+      return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
     }
   </script>
 </body>
